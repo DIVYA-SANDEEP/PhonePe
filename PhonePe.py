@@ -38,7 +38,7 @@ if selected == "Dashboards":
     
     Year = sidebar.slider("**Year**", min_value=2018, max_value=2023)
     Quarter = sidebar.slider("**Quarter**", min_value=1, max_value=4)
-  
+#visualizations for transactions:  
 if selected == "Dashboards":
      if chart_type == "Transactions":
           st.markdown("### :violet[State]")
@@ -96,7 +96,8 @@ if selected == "Dashboards":
 
                fig.update_traces(textposition='inside', textinfo='percent+label')
                st.plotly_chart(fig,use_container_width=True)
-     
+            
+     #visualizations for users: 
      if chart_type == "Users":
           st.markdown("### :violet[States]")
           if Year==2023 and Quarter in [4]:
@@ -186,7 +187,7 @@ if selected == "Gathered Data":
     Type = st.sidebar.selectbox("**Type**", ("Transactions", "Users"))
     col1,col2 = st.columns(2)
     
-
+# Gathered_data for transactions:
     if Type == "Transactions":
          
         with col1:
@@ -285,7 +286,7 @@ if selected == "Gathered Data":
                         color_continuous_scale=px.colors.sequential.Plasma)
             st.plotly_chart(fig,use_container_width=True)
         
-     
+    # Gathered_data for users: 
     if Type == "Users":
         st.markdown("## :violet[Overall State Data - User App opening frequency]")
         if Year==2023 and Quarter in [4]:
@@ -362,7 +363,7 @@ if selected == "Home":
 if selected == "About":
     col1, col2 = st.columns([2, 2], gap="medium")
 
-    # Column 1: PhonePe Pulse Content
+
     with col1:
         st.markdown("### :violet[About PhonePe Pulse:]")
         st.write("Welcome to PhonePe Pulse, India's pioneering platform for exploring and understanding digital payment trends. With a rich dataset of over 2000+ Crore transactions presented on an interactive map of India, PhonePe Pulse provides a unique perspective on the nation's digital payment landscape.")
